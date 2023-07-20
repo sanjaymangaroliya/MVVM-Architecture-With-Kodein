@@ -1,15 +1,22 @@
 package com.mvvmarchitecturewithkodein.api
 
+import com.mvvmarchitecturewithkodein.extensions.TAG
+import com.mvvmarchitecturewithkodein.utils.LogUtil
 import com.mvvmarchitecturewithkodein.utils.Utils
 import retrofit2.Response
 
 abstract class SafeApiRequest {
     suspend fun <T : Any> apiRequest(call: suspend () -> Response<T>?): T {
-        val response = call.invoke()
-        if (response != null && response.isSuccessful && response.code() == 200) {
-            return response.body()!!
-        } else {
-            throw ApiException(Utils.chkStr(response?.message()))
+        try {
+            val response = call.invoke()
+            LogUtil.e(TAG,"RESPONSE::$response")
+            if (response != null && response.isSuccessful && response.code() == 200) {
+                return response.body()!!
+            } else {
+                throw ApiException(Utils.chkStr(response?.message()))
+            }
+        }catch (e : ApiException){
+            throw ApiException(Utils.chkStr(e.message))
         }
     }
 }
