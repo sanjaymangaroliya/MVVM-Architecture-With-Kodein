@@ -2,7 +2,6 @@ package com.mvvmarchitecturewithkodein.ui
 
 import com.mvvmarchitecturewithkodein.api.ApiService
 import com.mvvmarchitecturewithkodein.api.SafeApiRequest
-import com.mvvmarchitecturewithkodein.model.PostModel
 import com.mvvmarchitecturewithkodein.model.ProductModel
 
 class ProductRepository(apiService: ApiService) : SafeApiRequest() {

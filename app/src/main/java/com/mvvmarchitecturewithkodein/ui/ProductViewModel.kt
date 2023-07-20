@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mvvmarchitecturewithkodein.R
 import com.mvvmarchitecturewithkodein.api.ApiException
-import com.mvvmarchitecturewithkodein.model.PostModel
 import com.mvvmarchitecturewithkodein.model.ProductModel
 import com.mvvmarchitecturewithkodein.utils.NetUtils
 import kotlinx.coroutines.Dispatchers

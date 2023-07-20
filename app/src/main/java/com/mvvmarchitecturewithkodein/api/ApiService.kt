@@ -1,7 +1,6 @@
 package com.mvvmarchitecturewithkodein.api
 
 import android.content.Context
-import com.mvvmarchitecturewithkodein.model.PostModel
 import com.mvvmarchitecturewithkodein.model.ProductModel
 import retrofit2.Response
 import retrofit2.http.*
